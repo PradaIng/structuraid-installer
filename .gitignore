@@ -1,2 +1,3 @@
 dist/UI/**
 dist/daemon/**
+src/*.exe
