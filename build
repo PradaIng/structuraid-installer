@@ -1,0 +1,28 @@
+#! /bin/sh
+
+echo ""
+echo "Step 1/2 -- Building and copying desktop app"
+echo ""
+
+cd ../desktop/
+npm run package
+cd ../installer
+rm -rf dist/UI
+mkdir -p dist/UI
+cp -r ../desktop/release/build/win-unpacked/* dist/UI/
+
+echo ""
+echo "Step 1/2 -- Desktop app installation files are copied successfully"
+echo ""
+
+echo ""
+echo "Step 2/2 -- Copying daemon app"
+echo ""
+
+rm -rf dist/daemon
+mkdir -p dist/daemon
+cp -r ../daemon/* dist/daemon/
+
+echo ""
+echo "Step 2/2 -- Daemon app copied successfully"
+echo ""
